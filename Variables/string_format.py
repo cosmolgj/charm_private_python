@@ -1,4 +1,87 @@
+############################################################
+# method 1 for formatting
+# %s string, %c character, %d integer, %f floating-point, %o octal, %x hexadecimal
 
+string_a = "I eat %d apples." % 3
+print(string_a)
+
+string_b = "I eat %s apples." % "five"
+print(string_b)
+
+number = 7
+string_c = "I eat %d apples." % number
+print(string_c)
+
+day = "four"
+string_d = "I ate %d apples. so i was sick for %s days." % (number, day)
+print(string_d)
+
+############################################################
+# method 2 for formatting
+
+string_e = "I eat {0} apples.".format(3)
+print(string_e)
+
+string_f = "I eat {0} apples.".format("five")
+print(string_f)
+
+string_g = "I eat {} apples.".format(number)
+print(string_g)
+
+string_h = "I eat {0} apples. So i was sick for {1} days.".format(number, day)
+print(string_h)
+
+# left sorting
+
+string_i = "{0:<10}".format("hi")
+print(string_i)
+
+# right sorting
+
+string_j = "{0:>10}".format("hi")
+print(string_j)
+
+# centeral sorting
+
+string_k = "{0:^10}".format("hi")
+print(string_k)
+
+# fill empty space
+
+string_l = "{0:=^20}".format(" hi ")
+print(string_l)
+
+string_m = "{0:=<20}".format(" hi ")
+print(string_m)
+
+# present floating-point
+
+a = 3.425489823
+print("{0:0.4f}".format(a))
+
+print("{0:10.4f}".format(a))
+
+
+############################################################
+# method 3 for formatting (f formatting)
+
+name = 'Chulsoo Kim'
+age = 34
+
+print(f"my name is {name}. age is {age}.")
+
+d = {'name':'Chulsoo Kim', 'age':34}
+print(f"my name is {d['name']}. age is {d['age']}")
+
+print(f"{'hi':<20}")    # left sorting with f formatting
+print(f"{'hi':>20}")    # right sorting with f formatting
+print(f"{'hi':^20}")    # central sorting with f formatting
+
+print(f"{' hi ':=^20}")
+
+
+############################################################
+"""
 string_a = "{}".format(10)
 
 print(string_a)
@@ -67,3 +150,4 @@ output_w = 52.0
 output_x = "{:g}".format(output_w)
 print(output_w)
 print(output_x)
+"""
