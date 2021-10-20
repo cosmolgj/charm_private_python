@@ -67,3 +67,9 @@ print(a)
 
 a.extend([6, 7, 8])
 print(a)
+
+
+# list comprehension
+
+even_num = [i for i in range(10) if i % 2 == 0]
+print("list comprehension(even number): ", even_num)
