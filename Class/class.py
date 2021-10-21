@@ -1,7 +1,9 @@
+
+
 class FourCal:
     lastname = "lee"   # 클래스 변수 (생성된 객체 모두에서 공유됨)
 
-    def __init__(self, first, second):  # 생성자
+    def __init__(self, first, second):  # 생성자는 클래스 공간에 저장되어 모든 객체에 의해 참조됌
         self.first = first
         self.second = second
 
@@ -53,8 +55,31 @@ class SafeFourCal(FourCal):
 c = SafeFourCal(4, 0)
 print("SafeFourCal.div(c): ", c.div())
 
+# ==================================================
+# ==================================================
+# count instances
+
+class Person():
+    count = 0
+    def __init__(self):
+        print("created")
+ #       self.count += 1    # self.count 로는 카운트가 되지 않는다. 왜? self 가 클래스가 아닌 인스턴스의 주소를 가지고 있기 때문.
+        Person.count += 1
+
+    def get_count(self):
+#        return self.count  # self.count 와 Person.count 는 같다. 뭐지?
+        return Person.count
+
+p1 = Person()
+p2 = Person()
+print(p1.get_count())
+print(p2.get_count())
+print(Person.get_count(p1))
+print(Person.count)
 
 
+# ==================================================
+# ==================================================
 
 # 클래스를 선언합니다.
 class Student:
